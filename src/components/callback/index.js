@@ -5,14 +5,19 @@ import { push } from 'react-router-redux';
 import userManager from '../../utils/userManager';
 
 class CallbackPage extends React.Component {
-  successCallback = () => {
+  successCallback = (user) => {
+    console.log('user: ')
+    console.log(user)
     this.props.dispatch(push('/'));
+  }
+  errorCallback = (error) => {
+    console.error(error)
   }
 
   render() {
     // just redirect to '/' in both cases
     return (
-      <CallbackComponent userManager={userManager} successCallback={this.successCallback} errorCallback={this.successCallback}>
+      <CallbackComponent userManager={userManager} successCallback={this.successCallback} errorCallback={this.errorCallback}>
         <div>
           Redirecting...
         </div>

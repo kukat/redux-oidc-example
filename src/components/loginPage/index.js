@@ -4,7 +4,8 @@ import userManager from '../../utils/userManager';
 class LoginPage extends React.Component {
   onLoginButtonClick = (event) => {
     event.preventDefault();
-    userManager.signinRedirect();
+    userManager.signinPopup();
+    // userManager.signinRedirect();
   };
 
   render() {

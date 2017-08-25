@@ -34,8 +34,7 @@ app.use(express.static(__dirname + '/dist'))
     });
 });
 
-var httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
   console.log('Listening on port', app.get('port'));
 });
